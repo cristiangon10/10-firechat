@@ -1,0 +1,50 @@
+<h1>Chat</h1>
+<hr>
+
+<div class="app-mensajes" id="app-mensajes">
+
+
+  <div *ngFor="let chat of _cs.chats" [ngClass]="{'text-right': _cs.usuario.uid == chat.uid}">
+    <span class="badge "
+    [ngClass]="{'badge-primary': _cs.usuario.uid == chat.uid, 'badge-primary': _cs.usuario.uid != chat.uid }">{{chat.nombre}}</span>
+    <p>
+      {{chat.mensaje}}
+    </p>
+  </div>
+
+  <!-- <div class="text-left">
+    <span class="badge badge-primary">Juan Cardenas</span>
+    <p>
+      Puto el que lo lea
+    </p>
+  </div>
+
+  <div class="text-left">
+    <span class="badge badge-secondary">Dayron</span>
+    <p>
+      Platzi Live Jueves
+    </p>
+  </div>
+
+  <div class="text-left">
+    <span class="badge badge-danger">Harwin Silva</span>
+    <p>
+      Ahora digalo sin llorar
+    </p>
+  </div>
+
+  <div class="text-left">
+    <span class="badge badge-warning">Juan Cobos</span>
+    <p>
+      Ni una estrella brilla más que yo
+    </p>
+  </div>
+  <div class="text-right">
+    <span class="badge badge-success ">Cristian G</span>
+    <p>
+      Cagonzalez
+    </p>
+  </div> -->
+</div>
+<input type="text" class="form-control" name="mensaje" id="mensaje" [(ngModel)]="mensaje" placeholder="Escriba su mensaje aqui"
+(keyup.enter)="enviar_mensaje()">
